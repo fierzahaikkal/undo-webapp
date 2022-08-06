@@ -7,14 +7,17 @@
 }
 body{
     overflow: hidden;
-    background: #0A2540;
+    background: #00AED6;
 }
 .todo-wrap{
     max-width: 504px;
     margin: 155px auto;
     border-radius: 8px;
-    background: #ffff;
+    background: rgb(239, 238, 238);
     padding: 25px 0;
+    -webkit-box-shadow: 0px 0px 20px 2px rgba(69, 69, 69, 0.75);
+    -moz-box-shadow: 0px 0px 20px 2px rgba(69, 69, 69, 0.75);
+    box-shadow: 0px 0px 20px 2px rgba(69, 69, 69, 0.75);
 }
 .text-input{
     height: 50px;
@@ -25,9 +28,105 @@ body{
     height: 100%;
     width: 100%;
     border-radius: 8px;
+    padding: 0 20px 0 43px;
+    font-size: 18px;
+    border: 1px solid #9A9BA3;
+    outline: none;
+    background:rgb(239, 238, 238);
+}
+.text-input input::placeholder{
+    color: #9A9BA3;
 }
 .text-input i{
+    color: #EE2737;
     position: absolute;
     top:50%;
-    translate: position(17px, -50%);
+    transform: translate(17px, -50%);
+}
+.filter-section, li{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.filter-section{
+    padding: 18px 25px;
+    border-bottom: 1px solid #9A9BA3;
+}
+.filter span{
+    margin: 0 18px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.filter span:first-child{
+    margin-left: 0;
+}
+.filter-section .clear-btn{
+    outline: none;
+    border:none;
+    border-radius: 8px;
+    font-size: 13px;
+    padding: 8px 17px;
+    background: #F06400;
+    color: #ffff;
+    cursor: pointer;
+}
+.filter span.active{
+    color: #00AA13;
+}
+.task-section{
+    margin: 25px 30px;
+}
+.task-section .task{
+    list-style: none;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #9A9BA3;
+    align-items: center;
+}
+.task-section .task:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.task label{
+    display: flex;
+}
+.task label input{
+    margin-right: 12px;
+}
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+.settings .setting-menu{
+    position: absolute;
+    padding: 5px 0;
+    right: -5px;
+    bottom: -65px;
+    z-index: 2;
+    transform: scale(0);
+    background:rgb(239, 238, 238);
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0px 0px 6px rgba(69, 69, 69, 0.75);
+    border-radius: 5px;
+}
+.settings:hover .setting-menu{
+    transform: scale(1);
+}
+.setting-menu li{
+    height: 20px;
+    padding: 12px 15px;
+    font-size: 13px;
+    margin-bottom: 2px;
+    justify-content:flex-start;
+}
+.setting-menu li:last-child{
+    margin-bottom: 0;
+}
+.setting-menu li:hover{
+    background:rgb(224, 223, 223);
+}
+.setting-menu li i{
+    padding-right: 5px;
 }
