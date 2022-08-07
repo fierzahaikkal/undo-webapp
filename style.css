@@ -74,22 +74,43 @@ body{
     color: #00AA13;
 }
 .task-section{
-    margin: 25px 30px;
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 20px 10px 25px;
 }
 .task-section .task{
     list-style: none;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #9A9BA3;
-    align-items: center;
+    align-items: flex-start;
 }
+.task-section.overflow {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
 .task-section .task:last-child{
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: 0;
 }
+.task-section::-webkit-scrollbar{
+    width: 5px;
+  }
+  .task-section::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 25px;
+  }
+  .task-section::-webkit-scrollbar-thumb{
+    background: #e6e6e6;
+    border-radius: 25px;
+  }
 .task label{
     display: flex;
+}
+.task label p.checked{
+    text-decoration: line-through;
 }
 .task label input{
     margin-right: 12px;
@@ -111,7 +132,15 @@ body{
     box-shadow: 0px 0px 6px rgba(69, 69, 69, 0.75);
     border-radius: 5px;
 }
-.settings:hover .setting-menu{
+.task-section .task:last-child .setting-menu{
+    bottom: 0;
+    transform-origin: bottom right;
+  }
+  .task-section .task:first-child .setting-menu{
+    bottom: -65px;
+    transform-origin: top right;
+  }
+.settings .setting-menu.show{
     transform: scale(1);
 }
 .setting-menu li{
@@ -130,3 +159,28 @@ body{
 .setting-menu li i{
     padding-right: 5px;
 }
+@media (max-width: 400px) {
+    body{
+      padding: 0 10px;
+    }
+    .wrapper {
+      padding: 20px 0;
+    }
+    .filters span{
+      margin: 0 5px;
+    }
+    .task-input{
+      padding: 0 20px;
+    }
+    .controls{
+      padding: 18px 20px;
+    }
+    .task-box{
+      margin-top: 20px;
+      margin-right: 5px;
+      padding: 0 15px 10px 20px;
+    }
+    .task label input{
+      margin-top: 4px;
+    }
+  }
